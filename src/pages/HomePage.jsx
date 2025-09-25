@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/navbar";
 import ImageGallery from "@/components/image-gallery";
-import Footer from "@/components/footer";
 import CTASection from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -13,11 +11,9 @@ export default function HomePage() {
     <div className="min-h-screen relative flex flex-col items-center bg-gray-50">
       {/* Background with sunflower pattern */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-10 z-0"
+        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-30 z-0"
         style={{ backgroundImage: "url('/images/sunflower-bg.jpg')" }}
       />
-
-      <Navbar />
 
       <main className="relative z-10 flex flex-col items-center w-full px-6">
         {/* Hero / Frame Section */}
@@ -54,7 +50,8 @@ export default function HomePage() {
                 Where Art Meets Tradition
               </h1>
               <p className="text-lg sm:text-2xl md:text-3xl text-white/90 drop-shadow-[0_3px_8px_rgba(0,0,0,0.7)]">
-                Experience the timeless beauty of Islamic calligraphy reimagined through a contemporary lens.
+                Experience the timeless beauty of Islamic calligraphy reimagined
+                through a contemporary lens.
               </p>
             </div>
           </motion.div>
@@ -79,8 +76,6 @@ export default function HomePage() {
         <ImageGallery />
         <CTASection />
       </main>
-
-      <Footer />
     </div>
   );
 }

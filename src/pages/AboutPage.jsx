@@ -1,8 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
 
 export default function AboutPage() {
   return (
@@ -14,8 +12,6 @@ export default function AboutPage() {
           backgroundImage: "url('/images/sunflower-bg.jpg')",
         }}
       />
-
-      <Navbar />
 
       <main className="relative z-10">
         {/* Header */}
@@ -136,8 +132,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="w-full px-6 py-4 relative">
+    <nav className="w-full px-6 py-4 fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto bg-[#4e3d0e] backdrop-blur-sm rounded-full px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between">
           {/* Logo and Title - Left */}
@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Hamburger Button - Mobile */}
           <button
-            className="md:hidden text-[#fea900] hover:text-[#e0b481] transition-colors"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -92,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-24 left-4 right-4 bg-[#4e3d0e] rounded-2xl shadow-lg p-6 md:hidden z-50"
+            className="absolute top-24 left-4 right-4 bg-[#4e3d0e] rounded-2xl shadow-lg p-6 md:hidden"
           >
             <div className="flex flex-col space-y-4">
               <Link

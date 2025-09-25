@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Clock, Palette, Users } from "lucide-react"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen relative">
+    <div className="relative">
       {/* Background Pattern */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-repeat opacity-10 z-0"
@@ -15,8 +13,6 @@ export default function ContactPage() {
           backgroundImage: "url('/images/sunflower-bg.jpg')",
         }}
       />
-
-      <Navbar />
 
       <main className="relative z-10">
         {/* Header */}
@@ -167,8 +163,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }
