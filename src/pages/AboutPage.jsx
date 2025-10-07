@@ -59,7 +59,7 @@ export default function AboutPage() {
                 className="space-y-8"
               >
                 <div>
-                  <h2 className="text-4xl font-bold text-foreground mb-4">Bano</h2>
+                  <h2 className="text-4xl font-bold text-foreground mb-4">Qudsia Bano</h2>
                   <p className="text-xl text-primary font-semibold mb-6">Master Calligrapher & Artist</p>
 
                   <div className="space-y-4">
