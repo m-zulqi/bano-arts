@@ -50,7 +50,7 @@ const ImageCollage = () => {
   // Calculate total width of one set of images
   const frameWidth = 300; // width of each frame
   const totalWidth = images.length * frameWidth;
-
+  
   return (
     <>
       {/* Top row - moving left to right */}
