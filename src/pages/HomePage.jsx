@@ -5,6 +5,55 @@ import ImageGallery from "@/components/image-gallery";
 import CTASection from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ImageFrame } from "@/components/ui/image-frame";
+
+const ImageCollage = () => {
+  const images = [
+    "/gallery/abstract-calligraphy-art.jpg",
+    "/gallery/traditional-islamic-calligraphy.jpg",
+    "/gallery/contemporary-art-painting.jpg",
+    "/gallery/minimalist-calligraphy-design.jpg",
+    "/gallery/ornate-islamic-art-pattern.jpg",
+    "/gallery/modern-arabic-typography.jpg",
+  ];
+
+  return (
+    <motion.div
+      initial={{ x: 0 }}
+      animate={{ x: [0, -3840] }} // Double the total width for seamless loop
+      transition={{
+        duration: 60,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+      className="absolute top-0 left-0 flex h-full gap-4"
+    >
+      {images.map((src, i) => (
+        <div key={`img1-${i}`} className="w-[500px] h-full flex-shrink-0">
+          <ImageFrame>
+            <img
+              src={src}
+              alt={`Collage ${i}`}
+              className="w-full h-full object-cover opacity-60"
+            />
+          </ImageFrame>
+        </div>
+      ))}
+      {/* Duplicate set for seamless loop */}
+      {images.map((src, i) => (
+        <div key={`img2-${i}`} className="w-[500px] h-full flex-shrink-0">
+          <ImageFrame>
+            <img
+              src={src}
+              alt={`Collage ${i}`}
+              className="w-full h-full object-cover opacity-60"
+            />
+          </ImageFrame>
+        </div>
+      ))}
+    </motion.div>
+  );
+};
 
 export default function HomePage() {
   return (
@@ -23,14 +72,11 @@ export default function HomePage() {
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-[70px] sm:w-[800px] md:w-[900px] h-[400px] sm:h-[450px] md:h-[500px] bg-white border-8 border-amber-700 shadow-lg rounded-3xl overflow-hidden"
+            className="relative w-screen h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden"
           >
-            <img
-              src="/home/home-canvas.jpeg"
-              alt="Canvas framed background"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
+            {/* Image Collage */}
+            <ImageCollage />
+            <div className="absolute inset-0"></div>
           </motion.div>
 
           {/* Separate Text Container, overlapping above the frame */}

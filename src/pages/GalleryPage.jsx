@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import galleryData from "../data/gallery-data.json"
 import ImageModal from "@/components/image-modal"
+import { ImageFrame } from "@/components/ui/image-frame"
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -98,21 +99,18 @@ export default function GalleryPage() {
                   className="break-inside-avoid group cursor-pointer"
                   onClick={() => setSelectedImage(artwork)}
                 >
-                  <div className="relative bg-[#4e3d0e] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-                    <div className="p-3 bg-gradient-to-br from-[#fea900]/10 to-[#4e3d0e]/10">
-                      <div className={`relative overflow-hidden rounded-xl ${
-                        artwork.dimensions === "portrait" ? "aspect-[3/4]" :
-                        artwork.dimensions === "landscape" ? "aspect-[4/3]" :
-                        "aspect-square"
-                      }`}>
-                        <img
-                          src={artwork.src || "/placeholder.svg"}
-                          alt={artwork.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                    
+                  <ImageFrame
+                    aspectRatio={
+                      artwork.dimensions === "portrait" ? "aspect-[3/4]" :
+                      artwork.dimensions === "landscape" ? "aspect-[4/3]" :
+                      "aspect-square"
+                    }
+                  >
+                    <img
+                      src={artwork.src || "/placeholder.svg"}
+                      alt={artwork.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -120,7 +118,7 @@ export default function GalleryPage() {
                         <p className="text-white/80 text-sm leading-relaxed">{artwork.description}</p>
                       </div>
                     </div>
-                  </div>
+                  </ImageFrame>
                 </motion.div>
               ))}
             </motion.div>
