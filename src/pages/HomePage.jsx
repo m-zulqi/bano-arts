@@ -50,7 +50,7 @@ const ImageCollage = () => {
   // Calculate total width of one set of images
   const frameWidth = 300; // width of each frame
   const totalWidth = images.length * frameWidth;
-  
+
   return (
     <>
       {/* Top row - moving left to right */}
@@ -88,22 +88,22 @@ const ImageCollage = () => {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen relative flex flex-col items-center bg-gray-50">
+    <div className="min-h-screen relative flex flex-col items-center bg-gray-50 overflow-x-hidden">
       {/* Background with sunflower pattern */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-repeat opacity-30 z-0"
         style={{ backgroundImage: "url('/images/sunflower-bg.jpg')" }}
       />
 
-      <main className="relative z-10 flex flex-col items-center w-full px-6">
+      <main className="relative z-10 flex flex-col items-center w-full">
         {/* Hero / Frame Section */}
-        <section className="mt-20 mb-16 flex flex-col items-center relative">
+        <section className="mt-20 mb-16 flex flex-col items-center relative w-full">
           {/* Frame + Image (pure decoration) */}
           <motion.div
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-screen h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden"
+            className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden"
           >
             {/* Image Collage */}
             <ImageCollage />
