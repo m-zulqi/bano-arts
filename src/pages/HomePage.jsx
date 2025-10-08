@@ -9,49 +9,80 @@ import { ImageFrame } from "@/components/ui/image-frame";
 
 const ImageCollage = () => {
   const images = [
-    "/gallery/abstract-calligraphy-art.jpg",
-    "/gallery/traditional-islamic-calligraphy.jpg",
-    "/gallery/contemporary-art-painting.jpg",
-    "/gallery/minimalist-calligraphy-design.jpg",
-    "/gallery/ornate-islamic-art-pattern.jpg",
-    "/gallery/modern-arabic-typography.jpg",
+    {
+      src: "/gallery/abstract-calligraphy-art.jpg",
+      dimensions: "portrait",
+    },
+    {
+      src: "/gallery/traditional-islamic-calligraphy.jpg",
+      dimensions: "landscape",
+    },
+    {
+      src: "/gallery/contemporary-art-painting.jpg",
+      dimensions: "landscape",
+    },
+    {
+      src: "/gallery/minimalist-calligraphy-design.jpg",
+      dimensions: "portrait",
+    },
+    {
+      src: "/gallery/ornate-islamic-art-pattern.jpg",
+      dimensions: "landscape",
+    },
+    {
+      src: "/gallery/modern-arabic-typography.jpg",
+      dimensions: "landscape",
+    },
   ];
 
+  const createFrame = (src, index) => (
+    <div key={index} className="w-[300px] h-[200px] flex-shrink-0">
+      <ImageFrame>
+        <img
+          src={src}
+          alt={`Collage ${index}`}
+          className="w-full h-full object-cover opacity-60"
+        />
+      </ImageFrame>
+    </div>
+  );
+
+  // Calculate total width of one set of images
+  const frameWidth = 300; // width of each frame
+  const totalWidth = images.length * frameWidth;
+
   return (
-    <motion.div
-      initial={{ x: 0 }}
-      animate={{ x: [0, -3840] }} // Double the total width for seamless loop
-      transition={{
-        duration: 60,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-      className="absolute top-0 left-0 flex h-full gap-4"
-    >
-      {images.map((src, i) => (
-        <div key={`img1-${i}`} className="w-[500px] h-full flex-shrink-0">
-          <ImageFrame>
-            <img
-              src={src}
-              alt={`Collage ${i}`}
-              className="w-full h-full object-cover opacity-60"
-            />
-          </ImageFrame>
-        </div>
-      ))}
-      {/* Duplicate set for seamless loop */}
-      {images.map((src, i) => (
-        <div key={`img2-${i}`} className="w-[500px] h-full flex-shrink-0">
-          <ImageFrame>
-            <img
-              src={src}
-              alt={`Collage ${i}`}
-              className="w-full h-full object-cover opacity-60"
-            />
-          </ImageFrame>
-        </div>
-      ))}
-    </motion.div>
+    <>
+      {/* Top row - moving left to right */}
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x: [-totalWidth, 0] }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute top-[10%] left-0 flex h-[200px] gap-4"
+      >
+        {/* Three sets of images to ensure seamless loop */}
+        {[...images, ...images, ...images].map((img, i) => createFrame(img.src, `top-${i}`))}
+      </motion.div>
+
+      {/* Bottom row - moving right to left */}
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x: [0, -totalWidth] }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="absolute bottom-[10%] left-0 flex h-[200px] gap-4"
+      >
+        {/* Three sets of images to ensure seamless loop */}
+        {[...images, ...images, ...images].map((img, i) => createFrame(img.src, `bottom-${i}`))}
+      </motion.div>
+    </>
   );
 };
 
