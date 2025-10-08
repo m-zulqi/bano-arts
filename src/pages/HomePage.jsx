@@ -123,10 +123,10 @@ export default function HomePage() {
             }}
           >
             <div className="px-4 text-center">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)] mb-12">
-                Where Art Meets Tradition
+              <h1 className="font-['Ballet'] text-5xl sm:text-7xl md:text-[12rem] font-extrabold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)] mb-12">
+                Bano Arts
               </h1>
-              <p className="text-lg sm:text-2xl md:text-3xl text-white/90 drop-shadow-[0_3px_8px_rgba(0,0,0,0.7)]">
+              <p className="font-['Dynalight'] text-2xl sm:text-4xl md:text-5xl text-white/90 drop-shadow-[0_3px_8px_rgba(0,0,0,0.7)]">
                 Experience the timeless beauty of Islamic calligraphy reimagined
                 through a contemporary lens.
               </p>
