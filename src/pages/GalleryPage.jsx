@@ -11,7 +11,7 @@ export default function GalleryPage() {
   const [filteredArtworks, setFilteredArtworks] = useState([])
   const [selectedImage, setSelectedImage] = useState(null)
 
-  const categories = ["All", "Calligraphy", "Islamic Art", "Contemporary", "Mixed Media", "Traditional"]
+  const categories = ["All", "Islamic Arts", "Portraits", "Contemporary Arts"]
 
   useEffect(() => {
     if (activeCategory === "All") {
@@ -92,33 +92,34 @@ export default function GalleryPage() {
                 <motion.div
                   key={artwork.id}
                   layout
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="break-inside-avoid group cursor-pointer"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="break-inside-avoid group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer mb-8"
                   onClick={() => setSelectedImage(artwork)}
                 >
-                  <ImageFrame
-                    aspectRatio={
-                      artwork.dimensions === "portrait" ? "aspect-[3/4]" :
-                      artwork.dimensions === "landscape" ? "aspect-[4/3]" :
-                      "aspect-square"
-                    }
-                  >
-                    <img
-                      src={artwork.src || "/placeholder.svg"}
-                      alt={artwork.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-white font-bold text-xl mb-2">{artwork.title}</h3>
-                        <p className="text-white/80 text-sm leading-relaxed">{artwork.description}</p>
+                  {/* Frame Effect */}
+                  <div className="relative overflow-hidden rounded-2xl bg-background p-4">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img
+                        src={artwork.src || "/placeholder.svg"}
+                        alt={artwork.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="text-white font-bold text-xl mb-2">{artwork.title}</h3>
+                          <p className="text-gray-200 text-sm">{artwork.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </ImageFrame>
+                  </div>
+
+                  {/* Decorative Elements */}
+                  <div className="absolute top-2 right-2 w-4 h-4 bg-primary/30 rounded-full"></div>
+                  <div className="absolute bottom-2 left-2 w-3 h-3 bg-accent/40 rounded-full"></div>
                 </motion.div>
               ))}
             </motion.div>

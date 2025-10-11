@@ -1,55 +1,42 @@
-"use client";
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button"
+import ImageGallery from "@/components/image-gallery"
+import CTASection from "@/components/cta-section"
 
-import { motion } from "framer-motion";
-import ImageGallery from "@/components/image-gallery";
-import CTASection from "@/components/cta-section";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ImageFrame } from "@/components/ui/image-frame";
+// Constants
+const FRAME_CONFIG = {
+  WIDTH: 360,
+  HEIGHT: 230,
+  ANIMATION_DURATION: 40,
+}
 
+const GALLERY_IMAGES = [
+  { src: "/gallery/abstract-calligraphy-art.jpg", dimensions: "portrait" },
+  { src: "/gallery/traditional-islamic-calligraphy.jpg", dimensions: "landscape" },
+  { src: "/gallery/contemporary-art-painting.jpg", dimensions: "landscape" },
+  { src: "/gallery/minimalist-calligraphy-design.jpg", dimensions: "portrait" },
+  { src: "/gallery/ornate-islamic-art-pattern.jpg", dimensions: "landscape" },
+  { src: "/gallery/modern-arabic-typography.jpg", dimensions: "landscape" },
+]
+
+// Components
 const ImageCollage = () => {
-  const images = [
-    {
-      src: "/gallery/abstract-calligraphy-art.jpg",
-      dimensions: "portrait",
-    },
-    {
-      src: "/gallery/traditional-islamic-calligraphy.jpg",
-      dimensions: "landscape",
-    },
-    {
-      src: "/gallery/contemporary-art-painting.jpg",
-      dimensions: "landscape",
-    },
-    {
-      src: "/gallery/minimalist-calligraphy-design.jpg",
-      dimensions: "portrait",
-    },
-    {
-      src: "/gallery/ornate-islamic-art-pattern.jpg",
-      dimensions: "landscape",
-    },
-    {
-      src: "/gallery/modern-arabic-typography.jpg",
-      dimensions: "landscape",
-    },
-  ];
+  const totalWidth = GALLERY_IMAGES.length * FRAME_CONFIG.WIDTH
 
   const createFrame = (src, index) => (
-    <div key={index} className="w-[300px] h-[200px] flex-shrink-0">
-      <ImageFrame>
-        <img
-          src={src}
-          alt={`Collage ${index}`}
-          className="w-full h-full object-cover opacity-60"
-        />
-      </ImageFrame>
+    <div
+      key={index}
+      className="flex-shrink-0"
+      style={{ width: FRAME_CONFIG.WIDTH, height: FRAME_CONFIG.HEIGHT }}
+    >
+      <img
+        src={src || "/placeholder.svg"}
+        alt={`Collage ${index}`}
+        className="w-full h-full object-cover opacity-70 transition-opacity duration-300 hover:opacity-80"
+      />
     </div>
-  );
-
-  // Calculate total width of one set of images
-  const frameWidth = 300; // width of each frame
-  const totalWidth = images.length * frameWidth;
+  )
 
   return (
     <>
@@ -57,102 +44,93 @@ const ImageCollage = () => {
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: [-totalWidth, 0] }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-[10%] left-0 flex h-[200px] gap-4"
+        transition={{ duration: FRAME_CONFIG.ANIMATION_DURATION, repeat: Infinity, ease: "linear" }}
+        className="absolute left-0 flex"
+        style={{ top: "12%", height: FRAME_CONFIG.HEIGHT }}
       >
-        {/* Three sets of images to ensure seamless loop */}
-        {[...images, ...images, ...images].map((img, i) => createFrame(img.src, `top-${i}`))}
+        {[...GALLERY_IMAGES, ...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, i) => createFrame(img.src, `top-${i}`))}
       </motion.div>
 
       {/* Bottom row - moving right to left */}
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: [0, -totalWidth] }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute bottom-[10%] left-0 flex h-[200px] gap-4"
+        transition={{ duration: FRAME_CONFIG.ANIMATION_DURATION, repeat: Infinity, ease: "linear" }}
+        className="absolute left-0 flex"
+        style={{ bottom: "12%", height: FRAME_CONFIG.HEIGHT }}
       >
-        {/* Three sets of images to ensure seamless loop */}
-        {[...images, ...images, ...images].map((img, i) => createFrame(img.src, `bottom-${i}`))}
+        {[...GALLERY_IMAGES, ...GALLERY_IMAGES, ...GALLERY_IMAGES].map((img, i) => createFrame(img.src, `bottom-${i}`))}
       </motion.div>
     </>
-  );
-};
+  )
+}
 
 export default function HomePage() {
   return (
     <div className="min-h-screen relative flex flex-col items-center bg-gray-50 overflow-x-hidden">
-      {/* Background with sunflower pattern */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-30 z-0"
+        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-20 z-0"
         style={{ backgroundImage: "url('/images/sunflower-bg.jpg')" }}
       />
 
       <main className="relative z-10 flex flex-col items-center w-full">
-        {/* Hero / Frame Section */}
-        <section className="mt-20 mb-16 flex flex-col items-center relative w-full">
-          {/* Frame + Image (pure decoration) */}
+        <section className="mt-5 mb-10 flex flex-col items-center relative w-full">
+          {/* Frames container */}
           <motion.div
-            initial={{ scale: 1.1, opacity: 0 }}
+            initial={{ scale: 1.05, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden"
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            className="relative w-full overflow-hidden"
+            style={{ height: "600px" }}
           >
-            {/* Image Collage */}
             <ImageCollage />
-            <div className="absolute inset-0"></div>
-          </motion.div>
 
-          {/* Separate Text Container, overlapping above the frame */}
-          <motion.div
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="absolute flex flex-col items-center"
-            style={{
-              top: "6rem", // negative top to move it up (overlapping). Adjust as needed
-              width: "100%",
-              maxWidth: "900px",
-            }}
-          >
-            <div className="px-4 text-center">
-              <h1 className="font-['Ballet'] text-5xl sm:text-7xl md:text-[12rem] font-extrabold text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.85)] mb-12">
-                Bano Arts
+            <motion.div
+              initial={{ opacity: 0, y: -40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute w-full flex items-center justify-center"
+              style={{ top: "15rem" }}
+            >
+              <h1 className="font-['Ballet'] text-5xl sm:text-7xl md:text-[12rem] 
+              font-extrabold text-[#fea900] leading-none drop-shadow-[0_4px_15px_rgba(0,0,0,0.95)] tracking-wider relative">
+                <span className="absolute -inset-0.5"></span>
+                <span className="relative">Bano Arts</span>
+                <div className="absolute inset-0 mix-blend-overlay"></div>
               </h1>
-              <p className="font-['Dynalight'] text-2xl sm:text-4xl md:text-5xl text-white/90 drop-shadow-[0_3px_8px_rgba(0,0,0,0.7)]">
-                Experience the timeless beauty of Islamic calligraphy reimagined
-                through a contemporary lens.
-              </p>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Button below frame */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center"
+          >
+            <p className="font-['Allura'] font-semibold text-2xl sm:text-4xl md:text-5xl text-[#4e3d0e]">
+Where Portraits Come Alive, Calligraphy Speaks Faith, and Every Piece Honors Islamic Beauty
+            </p>
+          </motion.div>
+
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-12"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="mt-8"
           >
             <Button
               asChild
               size="lg"
-              className="bg-[#fea900] hover:bg-[#e0b481] text-white px-12 py-6 text-2xl"
+              className="px-10 py-6 text-xl bg-gradient-to-r from-[#fea900] to-[#e0b481] text-(--color-primary-foreground) hover:opacity-90"
             >
-              <Link to="/gallery">Explore Our Gallery</Link>
+              <Link href="/gallery">Explore Gallery</Link>
             </Button>
           </motion.div>
-        </section>
 
-        <ImageGallery />
-        <CTASection />
+          <ImageGallery />
+          <CTASection />
+        </section>
       </main>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download } from "lucide-react";
+import { X, Download, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ImageModal({ image, onClose }) {
@@ -22,6 +22,17 @@ export default function ImageModal({ image, onClose }) {
     }
   };
 
+  const handleCustomOrder = () => {
+    const whatsappNumber = "+923230199208";
+    const message = `Hi, I'm interested in ordering a custom piece similar to "${image.title}". Can we discuss?`;
+    const imageUrl = `${window.location.origin}${image.src}`;
+    
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message + '\n\nReference Image: ' + imageUrl)}`,
+      '_blank'
+    );
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -32,14 +43,6 @@ export default function ImageModal({ image, onClose }) {
       >
         <div className="absolute top-4 right-4 flex items-center gap-2">
           <Button
-            onClick={handleDownload}
-            variant="ghost"
-            size="icon"
-            className="text-white hover:text-[#fea900] rounded-full"
-          >
-            <Download className="w-6 h-6" />
-          </Button>
-          <Button
             onClick={onClose}
             variant="ghost"
             size="icon"
@@ -49,24 +52,60 @@ export default function ImageModal({ image, onClose }) {
           </Button>
         </div>
 
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="relative max-w-5xl w-full mx-auto"
-        >
-          <div className="relative aspect-[16/9] w-full">
+        <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-8 items-center">
+          {/* Image */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="relative w-full md:w-2/3 aspect-[4/3]"
+          >
             <img
               src={image.src}
               alt={image.title}
               className="w-full h-full object-contain rounded-lg"
             />
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-            <h3 className="text-white text-2xl font-bold mb-2">{image.title}</h3>
-            <p className="text-white/80">{image.description}</p>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Details */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="w-full md:w-1/3 text-white"
+          >
+            <h2 className="text-3xl font-bold mb-4">{image.title}</h2>
+            <p className="text-gray-300 mb-6">{image.description}</p>
+            
+            <div className="space-y-4 mb-8">
+              <div>
+                <span className="text-gray-400">Category:</span>
+                <span className="ml-2 text-white">{image.category}</span>
+              </div>
+              <div>
+                <span className="text-gray-400">Dimensions:</span>
+                <span className="ml-2 text-white capitalize">{image.dimensions}</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <Button
+                onClick={handleDownload}
+                className="w-full bg-white text-black hover:bg-white/90"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Image
+              </Button>
+              
+              <Button
+                onClick={handleCustomOrder}
+                className="w-full bg-green-500 hover:bg-green-600"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Order Custom Piece
+              </Button>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </AnimatePresence>
   );
