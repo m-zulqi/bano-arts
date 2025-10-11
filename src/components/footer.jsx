@@ -21,7 +21,7 @@ const SocialIcon = ({ Icon, href }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#191905] text-white py-12 px-6 relative z-20">
+    <footer className="bg-[#191905] text-white py-12 px-6 relative z-40"> {/* Updated z-index */}
       <div className="max-w-4xl mx-auto text-center">
         {/* Bano Arts Title with Logo */}
         <div className="flex items-center justify-center space-x-3 mb-6">

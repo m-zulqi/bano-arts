@@ -35,7 +35,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="w-full px-6 py-4 fixed top-0 left-0 right-0 z-50">
+    <nav className="w-full px-6 py-4 fixed top-0 left-0 right-0 z-40"> {/* Updated z-index */}
       <div className="max-w-7xl mx-auto bg-[#4e3d0e] backdrop-blur-sm rounded-full px-6 py-4 shadow-lg">
         <div className="flex items-center justify-between">
           {/* Logo and Title - Left */}

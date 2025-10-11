@@ -33,15 +33,23 @@ export default function ImageModal({ image, onClose }) {
     );
   };
 
+  const handleBackdropClick = (e) => {
+    // Only close if clicking the backdrop, not the content
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 md:p-8"
+        className="fixed inset-0 bg-black/90 z-[999] flex items-center justify-center p-4 md:p-8"
+        onClick={handleBackdropClick}
       >
-        <div className="absolute top-4 right-4 flex items-center gap-2">
+        <div className="absolute top-4 right-4 z-[1000] flex items-center gap-2">
           <Button
             onClick={onClose}
             variant="ghost"
@@ -52,7 +60,10 @@ export default function ImageModal({ image, onClose }) {
           </Button>
         </div>
 
-        <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div 
+          className="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-8 items-center"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Image */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}

@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
-      className="fixed bottom-6 right-6 z-50 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center gap-3 group"
+      className="fixed bottom-6 right-6 z-[90] bg-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 flex items-center gap-3 group"
     >
       <div className="relative">
         {/* WhatsApp Icon */}
