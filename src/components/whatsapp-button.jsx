@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export default function WhatsAppButton() {
   // Replace with your WhatsApp number
-  const whatsappNumber = "+923230199208"
+  const whatsappNumber = "+923164668877"
   const message = "Hello! I'm interested in your art. Can we discuss?"
 
   const handleClick = () => {

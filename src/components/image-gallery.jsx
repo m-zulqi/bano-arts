@@ -1,5 +1,3 @@
-"use client"
-
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { createPortal } from "react-dom"
@@ -60,7 +58,7 @@ export default function ImageGallery() {
           <h2 className="text-4xl md:text-5xl font-['Montserrat Alternates'] font-bold text-foreground mb-6 text-balance">
             Featured Artworks
           </h2>
-          <p className="text-4xl font-['Montez'] text-muted-foreground max-w-4xl font-medium mx-auto text-pretty">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty">
             Discover a curated selection of calligraphy and contemporary art
             pieces that showcase the beauty of traditional and modern artistic
             expression.

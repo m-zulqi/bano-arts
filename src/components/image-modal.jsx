@@ -49,7 +49,7 @@ export default function ImageModal({ image, onClose }) {
   }
 
   const handleCustomOrder = () => {
-    const whatsappNumber = "+923230199208"
+    const whatsappNumber = "+923164668877"
     const message = `Hi, I'm interested in ordering a custom piece similar to "${image.title}". Can we discuss?`
     const imageUrl = `${window.location.origin}${image.src}`
 

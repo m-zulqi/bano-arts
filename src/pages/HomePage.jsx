@@ -13,12 +13,11 @@ const GALLERY_IMAGES = [
 
 const ImageCollage = () => {
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
       <img
         src="/gallery/HERO-MAIN-PIC.png"
         alt="Hero Main"
-        className="w-auto opacity-90"
-        style={{ height: '250%' }}
+        className="w-full h-[150%] sm:h-[200%] md:h-[250%] object-cover opacity-90 transition-transform duration-300"
       />
     </div>
   )
@@ -40,7 +39,7 @@ export default function HomePage() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.1, ease: "easeOut" }}
             className="relative w-full overflow-hidden"
-            style={{ height: "600px" }}
+            style={{ height: "min(400px, 60vh)" }}
           >
             <ImageCollage />
 
@@ -89,7 +88,7 @@ Where Portraits Come Alive, Calligraphy Speaks Faith, and Every Piece Honors Isl
               size="lg"
               className="px-10 py-6 text-xl bg-gradient-to-r from-[#fea900] to-[#e0b481] text-(--color-primary-foreground) hover:opacity-90"
             >
-              <Link href="/gallery">Explore Gallery</Link>
+              <Link to="/collection">Explore Collections</Link>
             </Button>
           </motion.div>
 
