@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+"use client"
+
+>>>>>>> 7589d0dedecfb84bcc3d92b40c9cc0173530dfd6
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { createPortal } from "react-dom"
