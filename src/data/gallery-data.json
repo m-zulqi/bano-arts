@@ -42,7 +42,7 @@
   {
     "id": 6,
     "category": "Contemporary Arts",
-    "src": "/gallery/traditional-islamic-calligraphy.jpg",
+    "src": "gallery/contemporary-mixed-media-art.jpg",
     "title": "Typography Fusion",
     "description": "Modern Arabic typography design with contemporary color schemes",
     "dimensions": "landscape"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "category": "Portraits",
-    "src": "gallery/abstract-geometric-islamic-art.jpg",
+    "src": "gallery/landscape-painting-with-calligraphy.jpg",
     "title": "Nature's Portrait",
     "description": "Portrait enhanced with calligraphic elements",
     "dimensions": "landscape"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "category": "Islamic Arts",
-    "src": "/gallery/abstract-calligraphy-art.jpg",
+    "src": "/gallery/contemporary-art-painting.jpg",
     "title": "Golden Elegance",
     "description": "Luxurious gold leaf application on traditional black calligraphy",
     "dimensions": "square"
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "category": "Portraits",
-    "src": "/gallery/abstract-calligraphy-art.jpg",
+    "src": "gallery/portrait-with-calligraphy-elements.jpg",
     "title": "Spiritual Journey",
     "description": "Portrait exploring themes of spirituality through artistic expression",
     "dimensions": "landscape"
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "category": "Islamic Arts",
-    "src": "/gallery/abstract-calligraphy-art.jpg",
+    "src": "gallery/modern-arabic-typography.jpg",
     "title": "Contemporary Islamic Art",
     "description": "Modern interpretation of Islamic art principles with bold color choices",
     "dimensions": "square"
