@@ -89,7 +89,7 @@ Where Portraits Come Alive, Calligraphy Speaks Faith, and Every Piece Honors Isl
               size="lg"
               className="px-10 py-6 text-xl bg-gradient-to-r from-[#fea900] to-[#e0b481] text-(--color-primary-foreground) hover:opacity-90"
             >
-              <Link to="/gallery">Explore Collections</Link>
+              <Link to="/collection">Explore Collections</Link>
             </Button>
           </motion.div>
 
