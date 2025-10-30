@@ -1,15 +1,9 @@
+
 // import { motion } from "framer-motion"
 // import { Link } from "react-router-dom"
 // import { Button } from "@/components/ui/button"
 // import ImageGallery from "@/components/image-gallery"
 // import CTASection from "@/components/cta-section"
-
-
-
-// // Constants
-// const GALLERY_IMAGES = [
-//   { src: "/gallery/HERO-MAIN-PIC.png", dimensions: "portrait" },
-// ]
 
 // const ImageCollage = () => {
 //   return (
@@ -17,14 +11,12 @@
 //       <img
 //         src="/gallery/hero-main.png"
 //         alt="Hero Main"
-//               // className="w-[100%] sm:w-[140%] md:w-[160%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
-
-//         className="w-[75%] sm:w-[50%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+//       className="w-[85%] sm:w-[65%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+//         // className="w-[75%] sm:w-[60%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
 //       />
 //     </div>
 //   )
 // }
-
 
 // export default function HomePage() {
 //   return (
@@ -35,13 +27,13 @@
 //       />
 
 //       <main className="relative z-10 flex flex-col items-center w-full">
-//         <section className="mt-5 mb-10 flex flex-col items-center relative w-full">
+//         <section className="mt-2 mb-2 flex flex-col items-center relative w-full">
 //           {/* Hero Section */}
 //           <motion.div
 //             initial={{ scale: 1.05, opacity: 0 }}
 //             animate={{ scale: 1, opacity: 1 }}
 //             transition={{ duration: 1.1, ease: "easeOut" }}
-//             className="relative w-full overflow-visible h-[400px] sm:h-[600px] md:h-[90vh]"
+//             className="relative w-full overflow-visible h-[400px] sm:h-[500px] md:h-[80vh]"
 //           >
 //             <ImageCollage />
 
@@ -50,7 +42,7 @@
 //               animate={{ opacity: 1, y: 0 }}
 //               transition={{ duration: 0.8, delay: 0.3 }}
 //               className="absolute w-full flex items-center justify-center"
-//               style={{ top: "32%", transform: "translateY(-50%)" }}
+//               style={{ top: "31%", transform: "translateY(-50%)" }}
 //             >
 //               <h1 className="font-sans text-center">
 //                 <div className="relative">
@@ -67,24 +59,33 @@
 //             </motion.div>
 //           </motion.div>
 
-//           {/* Tagline */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.6, delay: 0.5 }}
-//             className="text-center"
-//           >
-//             <p className="font-['Allura'] font-semibold text-2xl sm:text-4xl md:text-5xl text-[#4e3d0e]">
-//               Where Portraits Come Alive, Calligraphy Speaks Faith, and Every Piece Honors Islamic Beauty
-//             </p>
-//           </motion.div>
+      
+
+//           {/* Tagline + Button Container */}
+// <div className="max-w-7xl mx-auto px-6 sm:px-6 -mt-20 text-center">
+//   {/* Tagline */}
+//   <motion.div
+//     initial={{ opacity: 0, y: 20 }}
+//     animate={{ opacity: 1, y: 0 }}
+//     transition={{ duration: 0.6, delay: 0.5 }}
+//     className="mb-0"
+//   >
+//     <p className="font-['Allura'] font-semibold text-xl sm:text-3xl md:text-4xl text-[#4e3d0e] leading-snug">
+//       Where Portraits Come Alive, Calligraphy Speaks Faith, and Every Piece Honors Islamic Beauty
+//     </p>
+//   </motion.div>
+
+//   {/* Button */}
+ 
+// </div>
+
 
 //           {/* Button */}
 //           <motion.div
 //             initial={{ y: 30, opacity: 0 }}
 //             animate={{ y: 0, opacity: 1 }}
 //             transition={{ duration: 0.6, delay: 0.8 }}
-//             className="mt-8"
+//             className="mt-5"
 //           >
 //             <Button
 //               asChild
@@ -106,6 +107,8 @@
 
 
 
+
+
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -118,7 +121,8 @@ const ImageCollage = () => {
       <img
         src="/gallery/hero-main.png"
         alt="Hero Main"
-        className="w-[75%] sm:w-[50%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+      className="w-[85%] sm:w-[65%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+        // className="w-[75%] sm:w-[60%] md:w-[70%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
       />
     </div>
   )
@@ -144,12 +148,11 @@ export default function HomePage() {
             <ImageCollage />
 
             <motion.div
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute w-full flex items-center justify-center"
-              style={{ top: "31%", transform: "translateY(-50%)" }}
-            >
+  initial={{ opacity: 0, y: -40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  className="absolute w-full flex items-center justify-center top-[48%] sm:top-[31%] md:top-[42%] transform -translate-y-1/2"
+>
               <h1 className="font-sans text-center">
                 <div className="relative">
                   <span className="absolute -inset-0.5"></span>
@@ -209,3 +212,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+
