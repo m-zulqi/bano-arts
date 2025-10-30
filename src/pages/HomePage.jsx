@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import ImageGallery from "@/components/image-gallery"
 import CTASection from "@/components/cta-section"
-// import ImageCollage from "@/components/image-collage"
 
 
 
