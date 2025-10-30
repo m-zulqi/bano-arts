@@ -17,7 +17,9 @@ const ImageCollage = () => {
       <img
         src="/gallery/hero-main.png"
         alt="Hero Main"
-        className="w-[100%] sm:w-[140%] md:w-[160%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+              // className="w-[100%] sm:w-[140%] md:w-[160%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
+
+        className="w-[105%] sm:w-[65%] md:w-[85%] h-auto object-contain opacity-90 transition-transform duration-500 ease-out"
       />
     </div>
   )
