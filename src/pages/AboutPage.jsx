@@ -28,7 +28,7 @@ export default function AboutPage() {
         </section>
 
         {/* Artist Profile Section */}
-        <section className="py-16 px-6">
+        <section className="py-5 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Artist Image */}

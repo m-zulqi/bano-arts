@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 // Constants
 const NAV_LINKS = [
   { path: "/", label: "Home" },
-  { path: "/gallery", label: "Gallery" },
+  { path: "/collection", label: "Collection" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
 ]
@@ -17,7 +17,7 @@ const NAV_LINKS = [
 const SOCIAL_LINKS = [
   { icon: Facebook, href: "https://www.facebook.com/qb.bano/" },
   { icon: Instagram, href: "https://www.instagram.com/bano.artt" },
-  { icon: Youtube, href: "https://www.youtubbe.com/bano.artt" },
+  { icon: Youtube, href: "https://youtube.com/@banoart7486?si=Pib3W25ypQWfgZYH" },
 ]
 
 // Components

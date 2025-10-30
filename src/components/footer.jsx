@@ -4,7 +4,7 @@ import { Facebook, Instagram, Youtube } from "lucide-react"
 const SOCIAL_LINKS = [
   { Icon: Facebook, href: "https://www.facebook.com/qb.bano/" },
   { Icon: Instagram, href: "https://www.instagram.com/bano.artt" },
-  { Icon: Youtube, href: "https://www.youtube.com/@banoarts" },
+  { Icon: Youtube, href: "https://youtube.com/@banoart7486?si=Pib3W25ypQWfgZYH" },
 ]
 
 const SocialIcon = ({ Icon, href }) => (

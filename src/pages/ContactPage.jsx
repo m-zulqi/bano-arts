@@ -49,7 +49,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                        <p className="text-muted-foreground">hello@banoarts.com</p>
+                        <p className="text-muted-foreground">artdurrani@gmail.com</p>
                         <p className="text-sm text-muted-foreground">For commissions and inquiries</p>
                       </div>
                     </div>
@@ -60,8 +60,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                        <p className="text-sm text-muted-foreground">Available Mon-Fri, 9AM-6PM</p>
+                        <p className="text-muted-foreground">+92 316 4668877</p>
+                        <p className="text-sm text-muted-foreground">Available Mon-Fri, 11AM-9PM</p>
                       </div>
                     </div>
 
@@ -70,9 +70,9 @@ export default function ContactPage() {
                         <MapPin className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Studio Location</h3>
-                        <p className="text-muted-foreground">123 Art District</p>
-                        <p className="text-muted-foreground">Creative City, CC 12345</p>
+                        <h3 className="font-semibold text-foreground mb-1">Location</h3>
+                        <p className="text-muted-foreground">Peshawar - The City of Flower</p>
+                        <p className="text-sm text-muted-foreground">KPK, 25000, Pakistan</p>
                       </div>
                     </div>
 
