@@ -42,7 +42,7 @@
   {
     "id": 6,
     "category": "Contemporary Arts",
-    "src": "/gallery/modern-arabic-typography.jpg",
+    "src": "public/gallery/ornate-islamic-art-pattern.jpg",
     "title": "Typography Fusion",
     "description": "Modern Arabic typography design with contemporary color schemes",
     "dimensions": "landscape"
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "category": "Portraits",
-    "src": "/gallery/watercolor-calligraphy-art.jpg",
+    "src": "gallery/abstract-geometric-islamic-art.jpg",
     "title": "Watercolor Dreams",
     "description": "Delicate watercolor techniques applied to traditional portraiture",
     "dimensions": "portrait"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "category": "Portraits",
-    "src": "/landscape-painting-with-calligraphy.jpg",
+    "src": "gallery/abstract-geometric-islamic-art.jpg",
     "title": "Nature's Portrait",
     "description": "Portrait enhanced with calligraphic elements",
     "dimensions": "landscape"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "category": "Islamic Arts",
-    "src": "/gold-leaf-calligraphy.jpg",
+    "src": "/gallery/abstract-calligraphy-art.jpg",
     "title": "Golden Elegance",
     "description": "Luxurious gold leaf application on traditional black calligraphy",
     "dimensions": "square"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "category": "Contemporary Arts",
-    "src": "/contemporary-mixed-media.jpg",
+    "src": "/gallery/abstract-calligraphy-art.jpg",
     "title": "Mixed Media Innovation",
     "description": "Innovative combination of digital and traditional techniques",
     "dimensions": "portrait"
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "category": "Portraits",
-    "src": "/spiritual-art-piece.jpg",
+    "src": "/gallery/abstract-calligraphy-art.jpg",
     "title": "Spiritual Journey",
     "description": "Portrait exploring themes of spirituality through artistic expression",
     "dimensions": "landscape"
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "category": "Islamic Arts",
-    "src": "/modern-islamic-art.jpg",
+    "src": "/gallery/abstract-calligraphy-art.jpg",
     "title": "Contemporary Islamic Art",
     "description": "Modern interpretation of Islamic art principles with bold color choices",
     "dimensions": "square"

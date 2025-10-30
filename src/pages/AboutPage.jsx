@@ -7,10 +7,8 @@ export default function AboutPage() {
     <div className="min-h-screen relative">
       {/* Background Pattern */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-10 z-0"
-        style={{
-          backgroundImage: "url('/images/sunflower-bg.jpg')",
-        }}
+        className="fixed inset-0 bg-cover bg-center bg-repeat opacity-20 z-0"
+        style={{ backgroundImage: "url('/images/sunflower-bg.jpg')" }}
       />
 
       <main className="relative z-10">
